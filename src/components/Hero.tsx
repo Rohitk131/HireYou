@@ -82,7 +82,7 @@ const Hero = () => {
   }, []);
   
   return (
-    <div className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+    <div className="relative min-h-screen flex flex-col justify-center overflow-hidden ">
       {/* Background elements */}
       <div className="absolute inset-0 grid-bg opacity-90"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-dark/0 via-dark/50 to-dark"></div>
