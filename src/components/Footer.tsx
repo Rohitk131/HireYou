@@ -48,7 +48,7 @@ const Footer = () => {
   ];
   
   return (
-    <footer className="relative bg-gradient-to-b from-dark-200/30 to-dark-300/30 border-t border-white/10 overflow-hidden w-[70%] rounded-2xl mx-auto">
+    <footer className="relative bg-gradient-to-b from-dark-200/30 to-dark-300/30 border-t border-white/10 overflow-hidden w-[100%] md:w-[70%]  rounded-2xl mx-auto">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
         <div className="absolute top-40 -left-20 w-60 h-60 rounded-full bg-neon-yellow/20 blur-[100px]"></div>
