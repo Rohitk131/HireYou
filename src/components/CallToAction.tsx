@@ -23,18 +23,7 @@ const CallToAction = () => {
     <section className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-30"></div>
       
-      {/* Glow effects */}
-      <GlowEffect 
-        color="yellow" 
-        size="lg" 
-        className="absolute top-40 left-20 opacity-30 hidden lg:block" 
-      />
-      <GlowEffect 
-        color="blue" 
-        size="lg" 
-        className="absolute bottom-20 right-20 opacity-30 hidden lg:block" 
-      />
-      
+    
       <div className="relative z-10 section-container">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="glass-card rounded-2xl p-8 border border-white/10 hover:border-neon-yellow/30 transition-all duration-300 animate-fade-in-up">

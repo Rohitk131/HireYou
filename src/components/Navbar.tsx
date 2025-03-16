@@ -1,8 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -20,21 +20,21 @@ const Navbar = () => {
   return (
     <nav 
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6',
-        scrolled ? 'bg-dark-100/80 backdrop-blur-md shadow-md' : 'bg-transparent'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-600 py-4 px-6 w-1/2 mx-auto bg-dark-100/80 backdrop-blur-md shadow-md rounded-full  mt-2 border '
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
-          <div className="relative h-8 w-8 overflow-hidden">
-            <div className="absolute inset-0 rounded-full bg-neon-yellow animate-pulse-slow"></div>
-            <div className="absolute inset-0.5 rounded-full bg-dark"></div>
-            <div className="absolute inset-0 flex items-center justify-center font-bold text-neon-yellow">
-              AI
-            </div>
-          </div>
-          <span className="font-bold text-xl text-white">AI Synergy<span className="text-neon-yellow">.</span></span>
-        </a>
+      <a href="#" className="flex items-center gap-3">
+        <motion.div
+          className="relative h-10 w-10 rounded-full bg-neon-yellow shadow-[0_0_10px_#ffdd57] flex items-center justify-center text-dark font-bold"
+          whileHover={{ scale: 1.1 }}
+        >
+          HY
+        </motion.div>
+        <span className="font-bold text-lg text-white tracking-wide">
+          HireYou<span className="text-neon-yellow">.</span>
+        </span>
+      </a>
         
         {/* Desktop navigation */}
         <div className="hidden md:flex items-center gap-8">

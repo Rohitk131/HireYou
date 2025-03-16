@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import GlowEffect from '@/components/ui/GlowEffect';
@@ -17,7 +16,7 @@ const Testimonials = () => {
       name: 'Michael Chen',
       role: 'Recruiting Manager, InnovateCo',
       image: 'https://source.unsplash.com/random/300x300/?portrait=2',
-      content: 'We've seen a 40% improvement in candidate quality since implementing this platform. The anti-cheating measures ensure we're evaluating genuine responses.',
+      content: 'We\'ve seen a 40% improvement in candidate quality since implementing this platform. The anti-cheating measures ensure we\'re evaluating genuine responses.',
       stars: 5
     },
     {
@@ -37,17 +36,12 @@ const Testimonials = () => {
   ];
   
   return (
-    <section id="testimonials" className="relative py-24 bg-dark-100">
+    <section id="testimonials" className="relative py-24 ">
       <div className="absolute inset-0 mask-radial-gradient">
-        <div className="absolute inset-0 grid-bg opacity-20"></div>
+        <div className="absolute inset-0 grid-bg opacity-90"></div>
       </div>
       
-      {/* Glow effects */}
-      <GlowEffect 
-        color="purple" 
-        size="lg" 
-        className="absolute bottom-20 left-20 opacity-30 hidden lg:block" 
-      />
+    
       
       <div className="relative z-10 section-container">
         <div className="text-center max-w-3xl mx-auto mb-16">

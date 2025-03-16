@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Twitter, Linkedin, Facebook, Instagram, Github, Mail, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -48,53 +48,71 @@ const Footer = () => {
   ];
   
   return (
-    <footer className="relative bg-dark-200 border-t border-white/10">
-      <div className="section-container py-12 md:py-16">
+    <footer className="relative bg-gradient-to-b from-dark-200/30 to-dark-300/30 border-t border-white/10 overflow-hidden w-[70%] rounded-2xl mx-auto">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
+        <div className="absolute top-40 -left-20 w-60 h-60 rounded-full bg-neon-yellow/20 blur-[100px]"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-purple-500/20 blur-[120px]"></div>
+      </div>
+
+      <div className="section-container py-8 md:py-10 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-          <div className="lg:col-span-2">
-            <a href="#" className="flex items-center gap-2 mb-6">
-              <div className="relative h-8 w-8 overflow-hidden">
-                <div className="absolute inset-0 rounded-full bg-neon-yellow animate-pulse-slow"></div>
-                <div className="absolute inset-0.5 rounded-full bg-dark-200"></div>
-                <div className="absolute inset-0 flex items-center justify-center font-bold text-neon-yellow">
-                  AI
+          <div className="lg:col-span-2 relative">
+            <motion.a 
+              href="#" 
+              className="flex items-center gap-3 mb-7"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <div className="relative h-10 w-10 overflow-hidden rounded-xl">
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-neon-yellow to-yellow-400 shadow-[0_0_15px_rgba(255,221,87,0.5)]"></div>
+                <div className="absolute inset-0.5 rounded-lg bg-dark-200"></div>
+                <div className="absolute inset-0 flex items-center justify-center font-bold text-neon-yellow text-lg">
+                  HY
                 </div>
               </div>
-              <span className="font-bold text-xl text-white">AI Synergy<span className="text-neon-yellow">.</span></span>
-            </a>
+              <span className="font-bold text-xl text-white tracking-wide">
+                HireYou<span className="text-neon-yellow">.</span>
+              </span>
+            </motion.a>
             
-            <p className="text-gray-400 mb-6 max-w-md">
+            <p className="text-gray-300 mb-8 max-w-md leading-relaxed">
               Revolutionize your hiring process with our AI-powered interview platform. 
               Create, share, and evaluate interviews with unprecedented efficiency and accuracy.
             </p>
             
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
-                <a 
+                <motion.a 
                   key={index}
                   href={social.href}
-                  className="text-gray-400 hover:text-neon-yellow transition-colors duration-200"
+                  className="text-gray-400 hover:text-neon-yellow bg-dark-300/50 p-2.5 rounded-full border border-white/5 hover:border-neon-yellow/30 hover:shadow-[0_0_15px_rgba(255,221,87,0.2)] transition-all duration-300"
                   aria-label={social.label}
+                  whileHover={{ y: -3 }}
                 >
                   {social.icon}
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
           
           {footerLinks.map((group, index) => (
             <div key={index} className="flex flex-col">
-              <h4 className="text-white font-semibold mb-4">{group.title}</h4>
-              <ul className="space-y-3">
+              <h4 className="text-white font-semibold mb-5 text-lg relative">
+                {group.title}
+                <span className="absolute -bottom-2 left-0 w-10 h-0.5 bg-gradient-to-r from-neon-yellow/80 to-neon-yellow/0"></span>
+              </h4>
+              <ul className="space-y-3.5">
                 {group.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a 
+                    <motion.a 
                       href={link.href}
                       className="text-gray-400 hover:text-neon-yellow transition-colors duration-200 flex items-center group"
+                      whileHover={{ x: 4 }}
                     >
-                      <ChevronRight className="h-3 w-3 mr-1 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200" />
+                      <ChevronRight className="h-3 w-3 mr-1.5 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-200 text-neon-yellow" />
                       {link.name}
-                    </a>
+                    </motion.a>
                   </li>
                 ))}
               </ul>
@@ -102,24 +120,42 @@ const Footer = () => {
           ))}
         </div>
         
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
             &copy; {year} AI Synergy. All rights reserved.
           </p>
           
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-neon-yellow text-sm transition-colors duration-200">
+            <motion.a 
+              href="#" 
+              className="text-gray-400 hover:text-neon-yellow text-sm transition-colors duration-200"
+              whileHover={{ y: -2 }}
+            >
               Privacy Policy
-            </a>
-            <a href="#" className="text-gray-400 hover:text-neon-yellow text-sm transition-colors duration-200">
+            </motion.a>
+            <motion.a 
+              href="#" 
+              className="text-gray-400 hover:text-neon-yellow text-sm transition-colors duration-200"
+              whileHover={{ y: -2 }}
+            >
               Terms of Service
-            </a>
-            <a href="#" className="text-gray-400 hover:text-neon-yellow text-sm transition-colors duration-200">
+            </motion.a>
+            <motion.a 
+              href="#" 
+              className="text-gray-400 hover:text-neon-yellow text-sm transition-colors duration-200"
+              whileHover={{ y: -2 }}
+            >
               Cookie Policy
-            </a>
+            </motion.a>
           </div>
         </div>
       </div>
+      
+      {/* Modern curved edge at the top */}
+      <div className="absolute top-0 left-0 right-0 h-4 bg-gradient-to-b from-transparent to-dark-200/0 backdrop-blur-sm"></div>
+      
+      {/* Bottom glow */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-neon-yellow/20 to-transparent"></div>
     </footer>
   );
 };
