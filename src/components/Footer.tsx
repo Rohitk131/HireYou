@@ -122,7 +122,7 @@ const Footer = () => {
         
         <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {year} AI Synergy. All rights reserved.
+            &copy; {year} HireYou. All rights reserved.
           </p>
           
           <div className="flex space-x-6 mt-4 md:mt-0">
